@@ -1,0 +1,57 @@
+{
+  "name": "@knoxcall/sdk",
+  "version": "1.1.0",
+  "description": "Official KnoxCall API client for Node.js and TypeScript",
+  "license": "Apache-2.0",
+  "homepage": "https://docs.knoxcall.com/api-reference",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knoxcall/sdk-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/knoxcall/sdk-node/issues"
+  },
+  "keywords": ["knoxcall", "api", "sdk", "oauth", "oauth2", "dpop"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "knoxcall": "./dist/cli/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./browser": {
+      "types": "./dist/browser/index.d.ts",
+      "import": "./dist/browser/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.2.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
